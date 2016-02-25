@@ -1,0 +1,5 @@
+D:\UP\LordNet\WebApplication1\BeReflector\bin\Debug\BeReflector.dll
+D:\UP\LordNet\WebApplication1\BeReflector\bin\Debug\BeReflector.pdb
+D:\UP\LordNet\WebApplication1\BeReflector\obj\Debug\BeReflector.csprojResolveAssemblyReference.cache
+D:\UP\LordNet\WebApplication1\BeReflector\obj\Debug\BeReflector.dll
+D:\UP\LordNet\WebApplication1\BeReflector\obj\Debug\BeReflector.pdb

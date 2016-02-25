@@ -1,0 +1,9 @@
+D:\UP\LordNet\WebApplication1\Reflector\bin\Debug\Reflector.exe.config
+D:\UP\LordNet\WebApplication1\Reflector\bin\Debug\Reflector.exe
+D:\UP\LordNet\WebApplication1\Reflector\bin\Debug\Reflector.pdb
+D:\UP\LordNet\WebApplication1\Reflector\obj\Debug\Reflector.csprojResolveAssemblyReference.cache
+D:\UP\LordNet\WebApplication1\Reflector\obj\Debug\Reflector.exe
+D:\UP\LordNet\WebApplication1\Reflector\obj\Debug\Reflector.pdb
+E:\WebApplication1\WebApplication1\Reflector\bin\Debug\Reflector.exe.config
+E:\WebApplication1\WebApplication1\Reflector\obj\Debug\Reflector.exe
+E:\WebApplication1\WebApplication1\Reflector\obj\Debug\Reflector.pdb
