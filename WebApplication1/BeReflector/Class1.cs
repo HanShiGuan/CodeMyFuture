@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace BeReflector
 {
@@ -15,6 +17,11 @@ namespace BeReflector
         public bool TestMethod()
         {
             return true;
+        }
+
+        public bool TestMethod1(bool flag)
+        {
+            return flag;
         }
     }
 }

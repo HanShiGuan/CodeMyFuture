@@ -15,10 +15,40 @@ namespace Reflector
 
         static void Main(string[] args)
         {
-            //EnumReflector();
-            string assembly = "Version=1.0.0.0,culture=zh-CN,PublicKeyToken=47887f89771bc57f";
+            // enum reflector demon
+            EnumReflector();
 
 
+            // dll reflector demon
+            DllReflector();
+
+        }
+
+
+        private static void DllReflector()
+        {
+            string assembly = "BeReflector,Version=1.0.0.0,Culture=neutral,PublicKeyToken=d810d128ae130572";
+            var assem = Assembly.Load(assembly);
+
+            // type
+            Type type = assem.GetType("BeReflector.Class1");
+
+            // instance
+            var instance = assem.CreateInstance("BeReflector.Class1");
+            var instance1 = Activator.CreateInstance(type);
+
+            // getMethod
+            var result = type.GetMethod("TestMethod").Invoke(instance, null);
+
+            
+            // paramers
+            Type[] param_types = new Type[1];
+            param_types[0] = Type.GetType("System.Boolean");
+
+            object[] objs = new object[1];
+            objs[0] = false;
+
+            var flag = type.GetMethod("TestMethod1", param_types).Invoke(instance1, objs);
 
         }
 
@@ -37,35 +67,17 @@ namespace Reflector
                         map.Add(field.Name, value);
                     }
 
-                    var attribute = Attribute.GetCustomAttribute(field,typeof(DescriptionAttribute), false);
-                    if(attribute != null)
+                    var attribute = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute), false);
+                    if (attribute != null)
                     {
                         descriptionMap.Add(field.Name, ((DescriptionAttribute)attribute).Description);
                     }
-                    
+
                 }
             }
+
         }
-        private static string GetDescription(FieldInfo field)
-        {
-            var att = System.Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute), false);
-            return att == null ? field.Name : ((DescriptionAttribute)att).Description;
-        }
-        //EF:就是让EF上下文保存了一下。不适合于集群(后期使用key，value保存在分布式缓存中，key为guid)
-        //public int SaveChanges()
-        //{
-        //    //return DbContextFactory.GetCurrentDbContext().SaveChanges();
 
-
-        //    string strAssembly = ConfigurationManager.AppSettings["DalAssembly"];
-        //    string strDbContextFactoryclassFulleName = ConfigurationManager.AppSettings["DbContextFactoryclassFulleName"];
-
-
-        //    Assembly assembly = Assembly.Load(strAssembly);
-        //    Type type = assembly.GetType(strDbContextFactoryclassFulleName);
-        //    MethodInfo methodInfo = type.GetMethod("GetCurrentDbContext");
-        //    return ((DbContext)methodInfo.Invoke(null, null)).SaveChanges();
-        //}
     }
 
     enum reflectorEnum
