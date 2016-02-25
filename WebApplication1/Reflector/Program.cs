@@ -18,7 +18,6 @@ namespace Reflector
             // enum reflector demon
             EnumReflector();
 
-
             // dll reflector demon
             DllReflector();
 
